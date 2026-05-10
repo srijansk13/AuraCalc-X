@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AuraCalc X | Ultra-Responsive OS</title>
+    <!-- Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-noir">
+    <div class="startup-x" id="startup-x">
+        <div class="startup-logo">AURACALC <span class="accent-text">X</span></div>
+    </div>
+
+    <!-- Environment -->
+    <div class="environment">
+        <div class="ambient-glow"></div>
+    </div>
+
+    <div class="app-container">
+        <!-- Sidebar Navigation (Adaptive) -->
+        <nav class="side-nav glass-panel">
+            <button class="nav-btn active" id="btn-calc" title="Calculator">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg>
+            </button>
+            <button class="nav-btn" id="btn-history" title="History Hub">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg>
+            </button>
+            <div class="nav-spacer"></div>
+            <button class="nav-btn" id="btn-theme" title="Switch Theme">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            </button>
+        </nav>
+
+        <main class="main-content">
+            <!-- Header Section (Adaptive) -->
+            <header class="top-header glass-panel">
+                <div class="os-info">OS_v4.2.0 // RESPONSIVE</div>
+                <div class="os-clock" id="live-time">00:00:00</div>
+            </header>
+
+            <!-- Display Stage (Fluid) -->
+            <section class="display-stage glass-panel">
+                <div class="memory-indicator" id="mem-flag">M</div>
+                <div class="expression-preview" id="expr-preview"></div>
+                <div class="result-line" id="result-line">0</div>
+            </section>
+
+            <!-- Control Stage (Grid-Based) -->
+            <section class="control-stage">
+                <!-- Memory Bank -->
+                <div class="memory-bank glass-panel">
+                    <button class="m-key" data-action="mc">MC</button>
+                    <button class="m-key" data-action="mr">MR</button>
+                    <button class="m-key" data-action="m-plus">M+</button>
+                    <button class="m-key" data-action="m-minus">M-</button>
+                    <button class="m-key" data-action="ms">MS</button>
+                </div>
+
+                <!-- Main Grid -->
+                <div class="calc-grid">
+                    <!-- Scientific Layer -->
+                    <div class="sci-layer glass-panel">
+                        <button class="key k-sci" data-val="sin(">sin</button>
+                        <button class="key k-sci" data-val="cos(">cos</button>
+                        <button class="key k-sci" data-val="tan(">tan</button>
+                        <button class="key k-sci" data-val="log(">log</button>
+                        <button class="key k-sci" data-val="ln(">ln</button>
+                        <button class="key k-sci" data-val="sqrt(">√</button>
+                        <button class="key k-sci" data-val="^">xʸ</button>
+                        <button class="key k-sci" data-val="!">n!</button>
+                        <button class="key k-sci" data-val="π">π</button>
+                        <button class="key k-sci" data-val="e">e</button>
+                    </div>
+
+                    <!-- Standard Layer -->
+                    <div class="std-layer">
+                        <div class="key-row">
+                            <button class="key k-op" data-action="clear">AC</button>
+                            <button class="key k-op" data-action="delete">DEL</button>
+                            <button class="key k-op" data-val="%">%</button>
+                            <button class="key k-op" data-val="/">÷</button>
+                        </div>
+                        <div class="key-row">
+                            <button class="key" data-val="7">7</button>
+                            <button class="key" data-val="8">8</button>
+                            <button class="key" data-val="9">9</button>
+                            <button class="key k-op" data-val="*">×</button>
+                        </div>
+                        <div class="key-row">
+                            <button class="key" data-val="4">4</button>
+                            <button class="key" data-val="5">5</button>
+                            <button class="key" data-val="6">6</button>
+                            <button class="key k-op" data-val="-">−</button>
+                        </div>
+                        <div class="key-row">
+                            <button class="key" data-val="1">1</button>
+                            <button class="key" data-val="2">2</button>
+                            <button class="key" data-val="3">3</button>
+                            <button class="key k-op" data-val="+">+</button>
+                        </div>
+                        <div class="key-row">
+                            <button class="key" data-val="(">(</button>
+                            <button class="key" data-val="0">0</button>
+                            <button class="key" data-val=")">)</button>
+                            <button class="key k-equal" data-action="calc">=</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- History Hub (Responsive Drawer) -->
+        <aside class="history-hub glass-panel" id="history-hub">
+            <div class="hub-header">
+                <h3>History Hub</h3>
+                <button class="icon-btn" id="close-history" style="font-size: 2rem;">×</button>
+            </div>
+            <div class="history-list" id="history-list">
+                <div class="empty-state">No calculations found.</div>
+            </div>
+            <button class="clear-history" id="clear-history">Wipe Storage</button>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
